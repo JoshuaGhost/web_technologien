@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta http-equiv = "content-type" content = "text/html; charset=UTF-8" />
+<title>Task Assistant of Crowd Flower</title>
+<script src="scripts/jquery.min.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="scripts/index.js"></script>
+<link href="index.css" rel="stylesheet">
+</head>
+<body>
+    <table class="table table-bordered">
+    <caption>Please Chose a Category:</caption>
+    <thead>
+        <tr><th>
+            <div class="content">
+                <div class="image_list" onmouseover="detailSlideIn(this)" onmouseout="detailSlideOut(this)">
+                    <ul class="clearfix">
+                        <li class="clearfix">
+                            <a href="if.html"><img class="imc" src="if.jpg"/></a>
+                        </li>
+                        <li class="clearfix">
+                            <a href="if.html"><img class="imc" src="if2.jpg"/></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </th>
+            <th><img src="vv.jpg" class="im" id="vv" /><a href="vv.html" id="vvd"><img src="if2.jpg" class="imd"/></a></th>
+            <th><a href="ia.html">Information Analysis</a></th>
+        </tr>
+    </thead>
+        <tr>
+            <th><a href="cc.html">Content Creation</a></th>
+            <th><a href="sv.html">Surveys</a></th>
+            <th><a href="ca.html">Contact Access</th>
+        </tr>
+    </table>
+    <!--<div class="content">-->
+    <!--以下为各个按钮处需要替换的代码，我把两个图片放进了一个ul里面，通过js操作把ul上下移动就好。重点在css里面image_list类的overflow:hidden那一行，说的是超出作用范围的部分隐藏-->
+        <div class="image_list" onmouseover="detailSlideIn(this)" onmouseout="detailSlideOut(this)">
+            <ul>
+                <li>
+                    <a href="if.html"><img class="imc" src="if.jpg"/></a>
+                </li>
+                <li>
+                    <a href="if.html"><img class="imc" src="if2.jpg"/></a>
+                </li>
+            </ul>
+       <!-- </div>  -->
+    </div>
+    </body>
+</html>

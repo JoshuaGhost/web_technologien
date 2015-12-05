@@ -1,0 +1,27 @@
+﻿@charset "utf-8";
+/* 代码整理：懒人之家 www.lanrenzhijia.com */
+*{ margin:0; padding:0; list-style:none}
+
+/*.about_edu{width: 100%;height: 627px;background: #094DA2;position: relative; }*/
+.about_edulist{overflow: hidden; color: #fff;position: relative;width: 1000px;height: 341px;margin:0 auto;}
+.about_edulist ul{width: 9999px;position: absolute;}
+.about_edulist ul li{width: 1000px; float: left;}
+.about_edulist ul li a{color: #fff;}
+.eduimg{float: left;width: 614px;height: 341px;position: relative;overflow: hidden;}
+.eduimg img{position: absolute;display: block;left: 0px;top: 0px;}
+.edurg{float: right;width: 380px;height: 181px; position: relative;overflow: hidden;}
+.edurg02{float: right;width: 380px; margin-top: 8px;height: 152px;overflow: hidden;position: relative;}
+.eduimg_cont{width: 145px;height: 301px;background: url(../images/z_img16.png) repeat;position: absolute;top: 0px; left: 0px;padding: 40px 25px 0 25px;}
+.eduimg_cont h3{font-size: 24px;line-height: 25px;padding: 15px 0 0 0;}
+.eduimg_cont p{padding: 30px 0 22px 0;line-height: 20px;}
+.eduimg_cont a.edu_more{display: inline-block;color: #fff;width: 49px;height: 30px;line-height: 30px;text-align: center;background: none;border: 1px solid #fff;}
+.edurg_cont{width: 72px;height: 181px;background: url(../images/z_img16.png) repeat; position: absolute;right: 0px;top: 0px;padding: 0 10px 0 15px;}
+.edurg_cont h3{font-size: 18px;padding: 35px 0 20px 0;}
+.edurg02_cont{width: 380px;height: 39px;background: url(../images/z_img16.png) repeat;position: absolute;bottom: 0px;left: 0px;line-height: 39px;}
+.edurg02_cont span{display: inline-block;padding-left: 20px;}
+.edurg02_cont span.span_tl{font-size: 18px;}
+.edu_btn{width: 100%;text-align: center;padding-top: 36px;}
+.edu_btn span{display: inline-block;width: 38px;height: 38px;background: url(../images/z_img18.png) no-repeat;cursor: pointer;}
+.edu_btn span.edu_rgbtn{background-position:right top;margin-left: 10px; }
+.eduimg_cont img{position:static; }
+

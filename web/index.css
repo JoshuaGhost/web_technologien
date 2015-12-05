@@ -1,0 +1,30 @@
+*{ margin:0; padding:0; list-style:none}
+
+.imc{
+    left:0px;
+    height:100px;
+    width:100px;
+    position:relative;
+    display: block;
+}
+
+.image_list {
+    overflow:hidden;
+    display:block;
+}
+
+.image_list{/*overflow: hidden*/; color: #fff; position: relative; width: 100px;height: 100px; margin:0 auto;}
+.image_list ul{width: 100px; height:100px; position: relative; margin:0;}
+.image_list ul li{width: 100px; height:100px;}
+.image_list ul li a{color: #fff;}
+
+th {
+    width:100px;
+    height:100px;
+}
+
+.content {
+    width:100px;
+    height:100px;
+    margin:0;
+}

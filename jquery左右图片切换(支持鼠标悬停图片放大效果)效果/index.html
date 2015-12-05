@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jquery左右图片切换(支持鼠标悬停图片放大效果)效果</title>
+    <link href="css/lanren.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<!-- 代码部分begin -->
+<div class="about_edu">
+    <div class="about_edulist web">
+        <ul class="clearfix">
+            <li class="clearfix">
+                <div class="eduimg"><img src="images/z_img13.jpg" width="614" height="341" />
+                    <div class="eduimg_cont">
+                        <a href="#"><img src="images/z_img17.png" width="129" height="13" /></a>
+                        <h3>宝能教育</h3>
+                        <p>宝能教育凭借先进的教育服务理念，开放的教育合作平台，共赢的教育投融资模式，强大的资源资本实力，致力于向全社会提供领先、便捷...</p>
+                        <a class="edu_more" href="#">更多</a> </div>
+                </div>
+                <div class="edurg">
+                    <a href="#"><img src="images/z_img14.jpg" width="380" height="181" />
+                        <div class="edurg_cont">
+                            <h3>社会责任</h3>
+                            <p>引领新发展 融合国际先进的教育理念</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="edurg02">
+                    <a href="#"><img src="images/z_img15.jpg" width="380" height="152" />
+                        <p class="edurg02_cont"><span class="span_tl">合作伙伴</span> <span>积极发展“创新型、国际化”的教育事业</span></p>
+                    </a>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="eduimg">
+                    <a href="#"><img src="images/z_img20.jpg" width="614" height="341" /></a>
+                    <div class="eduimg_cont">
+                        <img src="images/z_img19.png" width="131" height="13" />
+                        <h3>人才理念</h3>
+                        <p>“合理用人、客观评人、文化留人”。宝能教育殷切期待有识之士、有志之才加入我们，携手提供领先、便捷、优质的教育资源和服务。</p>
+                        <a class="edu_more" href="#">更多</a> </div>
+                </div>
+                <div class="edurg">
+                    <a href="#"><img src="images/z_img21.jpg" width="380" height="181" />
+                        <div class="edurg_cont">
+                            <h3>员工发展</h3>
+                            <p>引领新发展 融合国际先进的教育理念</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="edurg02">
+                    <a href="#"><img src="images/z_img22.jpg" width="380" height="152" />
+                        <p class="edurg02_cont"><span class="span_tl">招聘信息</span> <span>积极发展“创新型、国际化”的教育事业</span></p>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="edu_btn">
+        <span class="edu_leftbtn"></span>
+        <span class="edu_rgbtn"></span>
+    </div>
+</div>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/lanren.js"></script>
+<script>
+    edu();
+    $(".eduimg img").zoom_img();
+    $(".edurg img").zoom_img();
+    $(".edurg02 img").zoom_img();
+</script>
+<!-- 代码部分end -->
+
+</body>
+</html>
