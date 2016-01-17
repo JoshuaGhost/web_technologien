@@ -2,7 +2,7 @@
     $.fn.jquizzy = function(settings) {
         var defaults = {
             questions: null,
-            startImg: 'images/start.jpg',
+            startImg: 'images/start.gif',
             endText: 'End!',
             shortURL: null,
             sendResultsURL: null,
@@ -16,7 +16,15 @@
                 worst: 'Sorry,you had better try again！'
             }
         };
-
+        var categoryNames = ['Information Finding',
+                                                       'Valuation and Varification',
+                                                       'Information Analysis',
+                                                       'Content Creation',
+                                                       'Surveys',
+                                                       'Content Access'];
+        var tic = new Date();
+        var toc = new Date();
+        var counter = 0;
         var config = $.extend(defaults, settings);
         if (config.questions === null) {
             $(this).html('<div class="intro-container slide-container"><h2 class="qTitle">Failed to parse questions.</h2></div>');
@@ -24,6 +32,8 @@
         }
         var superContainer = $(this),
         answers = [],
+        categories = [],
+        cateLength = [0,0,0,0,0,0],
         introFob = '<div class="intro-container slide-container">\
                         <a class="nav-start" href="#">\
                             <p><h2>Step2: Finishing the pre-test</h2></p><br/><br/>\
@@ -55,12 +65,15 @@
             }
             contentFob += '</div></div>';
             answers.push(config.questions[questionsIteratorIndex].correctAnswer);
+            categories.push(config.questions[questionsIteratorIndex].category);
+            cateLength[categories[questionsIteratorIndex]] ++;
         }
         superContainer.html(introFob + contentFob + exitFob);
         var progress = superContainer.find('.progress'),
         progressKeeper = superContainer.find('.progress-keeper'),
         notice = superContainer.find('.notice'),
         progressWidth = progressKeeper.width(),
+        taskTimes = [],
         userAnswers = [],
         questionLength = config.questions.length,
         slidesList = superContainer.find('.slide-container');
@@ -83,7 +96,6 @@
             var result = Math.round(num * Math.pow(10, dec)) / Math.pow(10, dec);
             return result;
         }
-
         function judgeSkills(score) {
             var returnString;
             if (score === 100) return config.resultComments.perfect;
@@ -95,18 +107,10 @@
             else return config.resultComments.worst;
         }
 
-        function genSugesstion(competent) {
-            if (competent) {
-                return 'Congratulations, you have proved your competence in terrian Information Finding. You are welcome to participate the real job:<br/><br/>\
-                                <div class="proceed"><a href="#" >proceed !</a></div><br/>'
-            }
-            return 'Sorry, but you seem not ready for the tasks in Information Finding. Therefore you are not suggest to proceed<br/><br/>\
-                                <div class = "proceed-faded"><a href="#">proceed ?</a></div><br/>'
-        }
-
         progressKeeper.hide();
         notice.hide();
         slidesList.hide().first().fadeIn(300);
+
         superContainer.find('li').click(function() {
             var thisLi = $(this);
             if (thisLi.hasClass('selected')) {
@@ -116,31 +120,45 @@
                 thisLi.addClass('selected');
             }
         });
+
         superContainer.find('.nav-start').click(function() {
-            $(this).parents('.slide-container').fadeOut(500,
+            $(this).parents('.slide-container').fadeOut(300,
             function() {
-                $(this).next().fadeIn(500);
-                progressKeeper.fadeIn(500);
+                $(this).next().fadeIn(300);
+                progressKeeper.fadeIn(300);
             });
+            tic = new Date();
             return false;
         });
+
         superContainer.find('.next').click(function() {
+            toc = new Date();
             if ($(this).parents('.slide-container').find('li.selected').length === 0) {
                 notice.fadeIn(300);
                 return false;
             }
             notice.hide();
-            $(this).parents('.slide-container').fadeOut(200,
+            $(this).parents('.slide-container').fadeOut(300,
             function() {
-                $(this).next().fadeIn(200);
+                $(this).next().fadeIn(300);
             });
             progress.animate({
                 width: progress.width() + Math.round(progressWidth / questionLength)
             },
             500);
+            time = toc-tic;
+            if (taskTimes[counter] != undefined){
+                taskTimes[counter] +=time;
+            } else {
+                taskTimes.push(time);
+            }
+            counter++;
+            tic = new Date();
             return false;
         });
+
         superContainer.find('.prev').click(function() {
+            toc = new Date()
             notice.hide();
             $(this).parents('.slide-container').fadeOut(500,
             function() {
@@ -150,9 +168,25 @@
                 width: progress.width() - Math.round(progressWidth / questionLength)
             },
             500);
+            time = toc-tic;
+            if (taskTimes[counter]!=undefined){
+                taskTimes[counter] += time;
+            } else {
+                taskTimes.push(time);
+            }
+            counter--;
+            tic = new Date();
             return false;
         });
+
         superContainer.find('.final').click(function() {
+            toc = new Date();
+            time = toc-tic;
+            if(taskTimes[counter]!=undefined){
+                taskTimes[counter]+=time;
+            } else {
+                taskTimes.push(time);
+            }
             if ($(this).parents('.slide-container').find('li.selected').length === 0) {
                 notice.fadeIn(300);
                 return false;
@@ -170,29 +204,35 @@
                     url: config.sendResultsURL,
                     data: '{"answers": [' + collate.join(",") + ']}',
                     complete: function() {
-                        console.log("OH HAI");
+                        console.log("Dumping results completed");
                     }
                 });
             }
+
             progressKeeper.hide();
             var results = checkAnswers(),
-            resultSet = '',
-            trueCount = 0,
+            resultDocs= ['','','','','',''],
+            trueCounts = [0, 0, 0, 0, 0, 0],
+            cateTimes = [0, 0, 0, 0, 0, 0],
             shareButton = '',
-            score,
+            scores = [0,0,0,0,0,0],
             url;
             if (config.shortURL === null) {
                 config.shortURL = window.location
             };
-            for (var i = 0,
-            toLoopTill = results.length; i < toLoopTill; i++) {
+
+            for (var i = 0, toLoopTill = results.length; i < toLoopTill; i++) {
                 if (results[i] === true) {
-                    trueCount++;
+                    trueCounts[categories[i]]++;
                     isCorrect = true;
                 }
-                resultSet += '<div class="result-row">' + (results[i] === true ? "<div class='correct'>#"+(i + 1)+"<span></span></div>": "<div class='wrong'>#"+(i + 1)+"<span></span></div>");
-                resultSet += '<div class="resultsview-qhover">' + config.questions[i].question;
-                resultSet += "<ul>";
+                cateTimes[categories[i]] += taskTimes[i];
+                resultDocs[categories[i]]+= '<div class="result-row">' + (results[i] === true ? 
+                                                                                                            '<div class="correct">#'+(i + 1)+'<span></span></div>':
+                                                                                                            '<div class="wrong">#'     +(i + 1)+'<span></span></div>');
+                resultDocs[categories[i]] += '<div class="resultsview-qhover">' + config.questions[i].question;
+                resultDocs[categories[i]] += "<ul>";
+
                 for (answersIteratorIndex = 0; answersIteratorIndex < config.questions[i].answers.length; answersIteratorIndex++) {
                     var classestoAdd = '';
                     if (config.questions[i].correctAnswer == answersIteratorIndex + 1) {
@@ -201,16 +241,19 @@
                     if (userAnswers[i] == answersIteratorIndex + 1) {
                         classestoAdd += ' selected';
                     }
-                    resultSet += '<li class="' + classestoAdd + '">' + config.questions[i].answers[answersIteratorIndex] + '</li>';
+                    resultDocs[categories[i]] += '<li class="' + classestoAdd + '">' + config.questions[i].answers[answersIteratorIndex] + '</li>';
                 }
-                resultSet += '</ul></div></div>';
+                resultDocs[categories[i]] += '</ul></div></div>';
             }
-            score = roundReloaded(trueCount / questionLength * 100, 2);
-            competent = (score>=60)?true:false;
-            resultSet = '<h2 class="qTitle">' + judgeSkills(score) + '<br/> Your score： ' + score + '</h2>' + shareButton + '<div class="jquizzy-clear"></div>' + resultSet + '<div class="jquizzy-clear"></div>';
-            suggestion = '<h2 class="sugg">'+genSugesstion(competent)+"</h2>"
-            superContainer.find('.result-keeper').html(resultSet).show(300);
-            superContainer.find('.result-keeper').append(suggestion).show(300);
+//TODO
+            for (var i = 0; i < categories.length; i++) {
+                scores[i] = roundReloaded(trueCounts[i]/ cateLength[i] * 100, 2)
+                resultDoc = '<h2 class = "qTitle">Result for Category ' + categoryNames[i] + '<br/>' +
+                                           judgeSkills(scores[i]) + '<br/>\
+                                           Your score : ' + scores[i] + ' within '+cateTimes[i]+' ms</h2>' + shareButton + 
+                                           '<div class = "jquizzy-clear"></div>' + resultDocs[i] + '<div class = "jquizzy-clear"></div>';
+                superContainer.find('.result-keeper').append(resultDoc).show(500);
+            }
             superContainer.find('.resultsview-qhover').hide();
             superContainer.find('.result-row').hover(function() {
                 $(this).find('.resultsview-qhover').show();
