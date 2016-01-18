@@ -1,0 +1,16 @@
+.banner {
+    background-color: #555555;
+    margin:auto;
+    height:50px;
+}
+
+.banner_text {
+    font-weight:bold;
+    color: #CCCCCC;
+    position: relative;
+    left:50px;
+    margin-top: auto;
+    top:10px;
+    font-family:"Microsoft yahei",sans-serif;
+    font-size: 20px;
+}
