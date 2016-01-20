@@ -36,11 +36,11 @@
         cateLength = [0,0,0,0,0,0],
         introFob = '<div class="intro-container slide-container">\
                         <a class="nav-start" href="#">\
-                            <p><h2>Step2: Finishing the pre-test</h2></p><br/><br/>\
-                            <p>Following is pre-test for Information Finding.</p><br/>\
-                            <p>During the test you are supposed to finish five questions, after which your score will be given.</p><br/>\
-                            <p>You will meanwhile be recommended, whether tasks in terrian Information Finding are suitable for you</p><br/>\
-                            <p>Good luck in the Pre-test</p><br/><br/><br/>\
+                            <p><h2>At first: Finishing the pre-test</h2></p><br/><br/>\
+                            <p>Following is pre-test for the <i>&quotreal&quot</i> tasks</p><br/>\
+                            <p>During the test you are supposed to finish several questions, which will be separate evaluated and shown.</p><br/>\
+                            <p>You will meanwhile be recommended, on which terrian of tasks you are good.</p><br/><br/>\
+                            <p><b><i>Good luck in the Pre-test</i></b></p><br/><br/><br/>\
                             <span><img src="'+config.startImg+'"></span>\
                         </a>\
                     </div>',
