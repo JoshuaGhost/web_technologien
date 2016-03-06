@@ -10,41 +10,10 @@
 <script type="text/javascript" src="scripts/jquery.min.js"></script>
 <script type="text/javascript" src="scripts/quiz.js"></script>
 <script type="text/javascript" src="scripts/questions.js"></script>
+<script type="text/javascript" src="scripts/logging.js"></script>
 <script type="text/javascript">		
 var init={
 	'questions':[{
-		'question':'Which of the following is correct?',
-		'answers':[
-			'jQuery is a JavaScript Library',
-			'jQuery is a CSS Library',
-			'jQuery is a PHP framework',
-			'jQuery is a JSON Library'],
-		'correctAnswer':1
-	},{
-		'question':'What does XML stand for?',
-		'answers':[
-			'eXtra Modern Link',
-			'Example Markup Language',
-			'eXtensible Markup Language',
-			'X-Markup Language'],
-		'correctAnswer':3
-	},{
-		'question':'Inside which HTML element do we put the JavaScript?',
-		'answers':[
-			'javascript',
-			'script',
-			'scripting',
-			'js'],
-		'correctAnswer':2
-	},{
-		'question':'What is the previous version of HTML, prior to HTML5?',
-		'answers':[
-			'HTML 4.9',
-			'HTML 4.01',
-			'HTML 4.1',
-			'HTML 4'],
-		'correctAnswer':2
-	},{
 		'question':'What does CSS stand for?',
 		'answers':[
 			'Computer Style Sheets',
@@ -52,11 +21,36 @@ var init={
 			'Creative Style Sheets',
 			'Colorful Style Sheets'],
 		'correctAnswer':2
-	}]
+	}],
+	'tasks':[{
+		'taskTitle': '20 Units - Finding Middlenames of Famous People',
+		'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF'
+	},
+	{
+		'taskTitle': 'faasfddffffffffffffffffffffffffffffke',
+		'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF'
+	},
+	{
+		'taskTitle': 'fakfffffffffffffffffffffffffe',
+		'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF'
+	},
+	{
+		'taskTitle': 'fafffffffffffffffffffffffffffffffffffffffke',
+		'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF'
+	},
+	{
+		'taskTitle': 'faffffffffffffffffffffffffffffffffffffke',
+		'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF'
+	}],
+	
 };
 $(function(){
 	$('#quiz-container').jquizzy({
-        questions: init.questions
+        questions: init.questions,
+        tasks: init.tasks,
+        category: "Information Finding",
+        sendResultsURL: "loggingReceiver.com",
+        realTaskURL: "https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF"
     });
 });
 </script>
