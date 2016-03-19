@@ -14,51 +14,44 @@
 <script type="text/javascript">		
 var init={
 	'questions':[{
-		'question':'Which of the following is correct?',
-		'answers':[
-			'jQuery is a JavaScript Library',
-			'jQuery is a CSS Library',
-			'jQuery is a PHP framework',
-			'jQuery is a JSON Library'],
-		'correctAnswer':1
+		'category': 0,
+		'question': 'Which four numbers could be recognized from this picture?',
+		'quote': 'http://s23.postimg.org/5251gmkjf/0_1039887523084.jpg',
+		'solution': 'ydrn'
 	},{
-		'question':'What does XML stand for?',
-		'answers':[
-			'eXtra Modern Link',
-			'Example Markup Language',
-			'eXtensible Markup Language',
-			'X-Markup Language'],
-		'correctAnswer':3
+		'category': 0,
+		'question': 'Which four numbers could be recognized from this picture?',
+		'quote': 'http://s2.postimg.org/xhg5ozoyh/0_1145622891645.jpg',
+		'solution': 'tbta'
 	},{
-		'question':'Inside which HTML element do we put the JavaScript?',
-		'answers':[
-			'javascript',
-			'script',
-			'scripting',
-			'js'],
-		'correctAnswer':2
+		'category': 0,
+		'question': 'Which four numbers could be recognized from this picture?',
+		'quote': 'http://s11.postimg.org/x1mrmbkvn/0_1366121897745.jpg',
+		'solution': 'bawb'
 	},{
-		'question':'What is the previous version of HTML, prior to HTML5?',
-		'answers':[
-			'HTML 4.9',
-			'HTML 4.01',
-			'HTML 4.1',
-			'HTML 4'],
-		'correctAnswer':2
+		'category': 0,
+		'question': 'Which four numbers could be recognized from this picture?',
+		'quote': 'http://s30.postimg.org/nap4btrqp/0_1500734389565.jpg',
+		'solution': 'swfd'
 	},{
-		'question':'What does CSS stand for?',
-		'answers':[
-			'Computer Style Sheets',
-			'Cascading Style Sheets',
-			'Creative Style Sheets',
-			'Colorful Style Sheets'],
-		'correctAnswer':2
-	}]
+		'category': 0,
+		'question': 'Which four numbers could be recognized from this picture?',
+		'quote': 'http://s9.postimg.org/x3dm7ctkv/0_1552355921167.jpg',
+		'solution': 'rrgq'
+	}],
+	'tasks':[{
+    	'taskTitle': '30 Units - Image Transcription',
+    	'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856919/work?secret=gMN1Cb6aAgpj7mhlsMk0Y97cC4iNIAGXnH8lATkzRjT6',
+    	'category' : 0
+    }]
 };
 $(function(){
 	$('#quiz-container').jquizzy({
+		variation: 0,
         questions: init.questions,
-        category: "Content Creation",
+        tasks: init.tasks,
+        category: 0,
+        categoryName: "Content Creation",
         sendResultsURL: "loggingReceiver.com",
         realTaskURL: "https://tasks.crowdflower.com/channels/cf_internal/jobs/856919/work?secret=gMN1Cb6aAgpj7mhlsMk0Y97cC4iNIAGXnH8lATkzRjT6"
     });

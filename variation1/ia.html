@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Interpretation and Analysis Questions</title>
+
+<link rel="stylesheet" type="text/css" href="styles/quiz.css" />
+
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/quiz.js"></script>
+<script type="text/javascript" src="scripts/questions.js"></script>
+<script type="text/javascript" src="scripts/logging.js"></script>
+<script type="text/javascript">		
+var init={
+	'questions':[
+	//solution encoding: positive:=0; neutral:=1; negative:=2
+	{
+		'category': 1,
+		'question': 'How is the attitude of this tweet looks like?',
+		'quote': 'A Big congrats to Kevin McCarthy who was victorious on Saturday in the Presidents Day comp with a fine performance of very steady golf',
+		'solution': 0
+	},{
+		'category': 1,
+		'question': 'How is the attitude of this tweet looks like?',
+		'quote': 'Adam Levine strikes a pose for photographers outside of the Late Show with David Letterman on Thursday (October 25) in New York City',
+		'solution': 1
+	},{
+		'category': 1,
+		'question': 'How is the attitude of this tweet looks like?',
+		'quote': "Damn I have to wait til' tomorrow before I know if I can go to Oslo with my sis. Damn. I'm not good at waiting",
+		'solution': 2
+	},{
+		'category': 1,
+		'question': 'How is the attitude of this tweet looks like?',
+		'quote': 'Excited for Halloween tomorrow I am going to be Jake from State Farm',
+		'solution': 0
+	},{
+		'category': 1,
+		'question': 'How is the attitude of this tweet looks like?',
+		'quote': 'Forget the garlic, the soup is DISGUSTING! Thanks for nothing, Saturday Kitchen.',
+		'solution': 2
+	}],
+	'tasks':[
+    {
+    	'taskTitle': '30 Units - Sentiment Analysis',
+    	'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856918/work?secret=7ceQShBcCGGoxczJ2yFlfOjSWIpqXGiRGvxLJXihz%2FvJ',
+    	'category' : 1
+    }]
+};
+$(function(){
+	$('#quiz-container').jquizzy({
+		variation: 0,
+        questions: init.questions,
+        tasks: init.tasks,
+        categoryName: "Interpretation and Analysis",
+        sendResultsURL: "loggingReceiver.com",
+        realTaskURL: "https://tasks.crowdflower.com/channels/cf_internal/jobs/856918/work?secret=7ceQShBcCGGoxczJ2yFlfOjSWIpqXGiRGvxLJXihz%2FvJ"
+    });
+});
+</script>
+
+</head>
+
+<body>
+<div class = "banner"><div class="banner_text"><h2>Task Assistant for <a href="https://tasks.crowdflower.com/">CrowdFlower</a></h2></div></div>
+<div class="demo">
+	<div id='quiz-container'>
+		
+	</div>
+</div>
+
+</body>
+</html>

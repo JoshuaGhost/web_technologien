@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Task Assistant</title>
+
+<link rel="stylesheet" type="text/css" href="styles/quiz.css" />
+
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/quiz.js"></script>
+<script type="text/javascript" src="scripts/questions.js"></script>
+<script type="text/javascript" src="scripts/testLib.js"></script>
+<script src="scripts/getQueriesFromUrl.js"></script>
+    <script type="text/javascript">
+        var queries = getQueriesFromUrl(window.location.href);
+        localStorage.workerId = queries.workerId;
+    </script>
+
+</head>
+
+<body>
+<div class = "banner"><div class="banner_text"><h2>Task Assistant for <a href="https://tasks.crowdflower.com/">CrowdFlower</a></h2></div></div>
+<div class="demo">
+	<div id='quiz-container' class="main-quiz-holder">
+	<div class="intro-container slide-container">
+		<div class="nav-title">Step 1: Please choose a task:</div>
+			<div class = "nav-start">
+			<ul class="task-list">
+                <li class="task-title proceed"><a href="cc.html">30 Units - Image Transcription</a></li>
+                <li class="task-title proceed"><a href="ia.html">30 Units - Sentiment Analysis</a></li>
+                <li class="task-title proceed"><a href="if.html">20 Units - Finding Middlenames of Famous People</a></li>
+                <li class="task-title proceed"><a href="vv.html">20 Units - Identify the Spam SMS</a></li>
+            </ul>
+        <div class="description-text">
+        	<p>Please choose a task your are interested in.</p><br/>
+        	<p>Then finish the corresponding pre-test.</p>
+        </div>
+        </div>
+	</div>
+</div>
+
+</body>
+</html>

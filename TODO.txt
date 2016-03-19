@@ -1,0 +1,14 @@
+//ia的全称应该是interpretation and analysis
+//vv的全称应该是Verification and Validation
+//更改quiz的显示方式，增加图片显示和输入框的输入方式。
+ia的选项改为三个，positive negtive neutral，统一表达的方法
+vv的选项支持长文本显示。
+variation2 的comprehensive增加随机功能
+vv的选项变为5个
+每个题目的各个key为question，qoute（option在vv中）和solution
+在单独category的题目中增添设置标明当前category
+单独和comprehensive的tasklink要分别处理
+对所有result加上时间，并且换算成秒
+完成scenario2与3的判分
+variation3与4的跳出link（就是taskLink变量）
+生成答完问题之后的验证码
