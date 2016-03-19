@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Information Finding Questions</title>
+
+<link rel="stylesheet" type="text/css" href="styles/quiz.css" />
+
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/quiz.js"></script>
+<script type="text/javascript" src="scripts/questions.js"></script>
+<script type="text/javascript" src="scripts/logging.js"></script>
+<script type="text/javascript">		
+var init={
+	'questions':[{
+		'category': 2,
+		'question': 'Please find his middle name:',
+		'quote': 'Charlie Sheen',
+		'solution': 'Irwin'
+	},{
+		'category': 2,
+		'question': 'Please find his middle name:',
+		'quote': 'Daniel Craig',
+		'solution': 'Wroughton'
+	},{
+		'category': 2,
+		'question': 'Please find his middle name:',
+		'quote': 'Mohandas Gandhi',
+		'solution': 'Karamchand'
+	},{
+		'category': 2,
+		'question': 'Please find his middle name:',
+		'quote': 'Diana Ross',
+		'solution': 'Ernestine'
+	},{
+		'category': 2,
+		'question': 'Please find his middle name:',
+		'quote': 'Donald Duck',
+		'solution': 'Fauntleroy'
+	}],
+	'tasks':[{
+    	'taskTitle': '20 Units - Finding Middlenames of Famous People',
+    	'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF',
+    	'category' : 2
+    }]
+};
+$(function(){
+	$('#quiz-container').jquizzy({
+		variation: 0,
+        questions: init.questions,
+        tasks: init.tasks,
+        categoryName: "Information Finding",
+        sendResultsURL: "loggingReceiver.com",
+        realTaskURL: "https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF"
+    });
+});
+</script>
+
+</head>
+
+<body>
+<div class = "banner"><div class="banner_text"><h2>Task Assistant for <a href="https://tasks.crowdflower.com/">CrowdFlower</a></h2></div></div>
+<div class="demo">
+	<div id='quiz-container'>
+		
+	</div>
+</div>
+
+</body>
+</html>

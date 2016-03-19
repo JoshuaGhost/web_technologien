@@ -14,41 +14,44 @@
 <script type="text/javascript">		
 var init={
 	'questions':[{
-		'question':'What does CSS stand for?',
-		'answers':[
-			'Computer Style Sheets',
-			'Cascading Style Sheets',
-			'Creative Style Sheets',
-			'Colorful Style Sheets'],
-		'correctAnswer':2
+		'category': 2,
+		'question': 'Please find his middle name:',
+		'quote': 'Charlie Sheen',
+		'solution': 'Irwin'
+	},{
+		'category': 2,
+		'question': 'Please find his middle name:',
+		'quote': 'Daniel Craig',
+		'solution': 'Wroughton'
+	},{
+		'category': 2,
+		'question': 'Please find his middle name:',
+		'quote': 'Mohandas Gandhi',
+		'solution': 'Karamchand'
+	},{
+		'category': 2,
+		'question': 'Please find his middle name:',
+		'quote': 'Diana Ross',
+		'solution': 'Ernestine'
+	},{
+		'category': 2,
+		'question': 'Please find his middle name:',
+		'quote': 'Donald Duck',
+		'solution': 'Fauntleroy'
 	}],
 	'tasks':[{
-		'taskTitle': '20 Units - Finding Middlenames of Famous People',
-		'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF'
-	},
-	{
-		'taskTitle': 'faasfddffffffffffffffffffffffffffffke',
-		'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF'
-	},
-	{
-		'taskTitle': 'fakfffffffffffffffffffffffffe',
-		'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF'
-	},
-	{
-		'taskTitle': 'fafffffffffffffffffffffffffffffffffffffffke',
-		'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF'
-	},
-	{
-		'taskTitle': 'faffffffffffffffffffffffffffffffffffffke',
-		'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF'
-	}],
-	
+    	'taskTitle': '20 Units - Finding Middlenames of Famous People',
+    	'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF',
+    	'category' : 2
+    }]
 };
 $(function(){
 	$('#quiz-container').jquizzy({
+		variation: 0,
         questions: init.questions,
         tasks: init.tasks,
-        category: "Information Finding",
+        category: 2,
+        categoryName: "Information Finding",
         sendResultsURL: "loggingReceiver.com",
         realTaskURL: "https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF"
     });

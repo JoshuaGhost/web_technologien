@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Information Finding Questions</title>
+<title>Task Assistant</title>
 
 <link rel="stylesheet" type="text/css" href="styles/quiz.css" />
 
@@ -11,6 +11,7 @@
 <script type="text/javascript" src="scripts/quiz.js"></script>
 <script type="text/javascript" src="scripts/questions.js"></script>
 <script type="text/javascript" src="scripts/testLib.js"></script>
+<script src="scripts/getQueriesFromUrl.js"></script>
 <script type="text/javascript">		
 var init={	
 	'categoryNames': [  'Content Creation',
@@ -20,80 +21,80 @@ var init={
 	'questions':[{
 		'category': 0,
 		'question': 'Which four numbers could be recognized from this picture?',
-		'qoute': 'http://s23.postimg.org/5251gmkjf/0_1039887523084.jpg',
+		'quote': 'http://s23.postimg.org/5251gmkjf/0_1039887523084.jpg',
 		'solution': 'ydrn'
 	},{
 		'category': 0,
 		'question': 'Which four numbers could be recognized from this picture?',
-		'qoute': 'http://s2.postimg.org/xhg5ozoyh/0_1145622891645.jpg',
+		'quote': 'http://s2.postimg.org/xhg5ozoyh/0_1145622891645.jpg',
 		'solution': 'tbta'
 	},{
 		'category': 0,
 		'question': 'Which four numbers could be recognized from this picture?',
-		'qoute': 'http://s11.postimg.org/x1mrmbkvn/0_1366121897745.jpg',
+		'quote': 'http://s11.postimg.org/x1mrmbkvn/0_1366121897745.jpg',
 		'solution': 'bawb'
 	},{
 		'category': 0,
 		'question': 'Which four numbers could be recognized from this picture?',
-		'qoute': 'http://s30.postimg.org/nap4btrqp/0_1500734389565.jpg',
+		'quote': 'http://s30.postimg.org/nap4btrqp/0_1500734389565.jpg',
 		'solution': 'swfd'
 	},{
 		'category': 0,
 		'question': 'Which four numbers could be recognized from this picture?',
-		'qoute': 'http://s9.postimg.org/x3dm7ctkv/0_1552355921167.jpg',
+		'quote': 'http://s9.postimg.org/x3dm7ctkv/0_1552355921167.jpg',
 		'solution': 'rrgq'
 	},{
 		'category': 1,
 		'question': 'How is the attitude of this tweet looks like?',
-		'qoute': 'A Big congrats to Kevin McCarthy who was victorious on Saturday in the Presidents Day comp with a fine performance of very steady golf',
-		'solution': 'pos'
+		'quote': 'A Big congrats to Kevin McCarthy who was victorious on Saturday in the Presidents Day comp with a fine performance of very steady golf',
+		'solution': 0
 	},{
 		'category': 1,
 		'question': 'How is the attitude of this tweet looks like?',
-		'qoute': 'Adam Levine strikes a pose for photographers outside of the Late Show with David Letterman on Thursday (October 25) in New York City',
-		'solution': 'neu'
+		'quote': 'Adam Levine strikes a pose for photographers outside of the Late Show with David Letterman on Thursday (October 25) in New York City',
+		'solution': 1
 	},{
 		'category': 1,
 		'question': 'How is the attitude of this tweet looks like?',
-		'qoute': "Damn I have to wait til' tomorrow before I know if I can go to Oslo with my sis. Damn. I'm not good at waiting",
-		'solution': 'neg'
+		'quote': "Damn I have to wait til' tomorrow before I know if I can go to Oslo with my sis. Damn. I'm not good at waiting",
+		'solution': 2
 	},{
 		'category': 1,
 		'question': 'How is the attitude of this tweet looks like?',
-		'qoute': 'Excited for Halloween tomorrow I am going to be Jake from State Farm',
-		'solution': 'pos'
+		'quote': 'Excited for Halloween tomorrow I am going to be Jake from State Farm',
+		'solution': 0
 	},{
 		'category': 1,
 		'question': 'How is the attitude of this tweet looks like?',
-		'qoute': 'Forget the garlic, the soup is DISGUSTING! Thanks for nothing, Saturday Kitchen.',
-		'solution': 'neg'
+		'quote': 'Forget the garlic, the soup is DISGUSTING! Thanks for nothing, Saturday Kitchen.',
+		'solution': 2
 	},{
 		'category': 2,
 		'question': 'Please find his middle name:',
-		'qoute': 'Charlie Sheen',
+		'quote': 'Charlie Sheen',
 		'solution': 'Irwin'
 	},{
 		'category': 2,
 		'question': 'Please find his middle name:',
-		'qoute': 'Daniel Craig',
+		'quote': 'Daniel Craig',
 		'solution': 'Wroughton'
 	},{
 		'category': 2,
 		'question': 'Please find his middle name:',
-		'qoute': 'Mohandas Gandhi',
+		'quote': 'Mohandas Gandhi',
 		'solution': 'Karamchand'
 	},{
 		'category': 2,
 		'question': 'Please find his middle name:',
-		'qoute': 'Diana Ross',
+		'quote': 'Diana Ross',
 		'solution': 'Ernestine'
 	},{
 		'category': 2,
 		'question': 'Please find his middle name:',
-		'qoute': 'Donald Duck',
+		'quote': 'Donald Duck',
 		'solution': 'Fauntleroy'
 	},{
-		'category': 4,
+		'category': 3,
 		'question':'Which one of the following SMS could be spam',
 		'options':[
 			'Go until jurong point, crazy.. Available only in bugis n great world la e buffet... Cine there got amore wat...',
@@ -103,7 +104,7 @@ var init={
 			'Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C\'s apply 08452810075over18\'s'],
 		'solution': 5
 	},{
-		'category': 4,
+		'category': 3,
 		'question':'Which one of the following SMS could be spam',
 		'options':[
 			'Even my brother is not like to speak with me. They treat me like aids patent.',
@@ -113,7 +114,7 @@ var init={
 			'As per your request \'Melle Melle (Oru Minnaminunginte Nurungu Vettam)\' has been set as your callertune for all Callers. Press *9 to copy your friends Callertune'],
 		'solution': 2
 	},{
-		'category': 4,
+		'category': 3,
 		'question':'Which one of the following SMS could be spam',
 		'options':[
 			'I HAVE A DATE ON SUNDAY WITH WILL!!',
@@ -123,7 +124,7 @@ var init={
 			'Is that seriously how you spell his name?'],
 		'solution': 4
 	},{
-		'category': 4,
+		'category': 3,
 		'question':'Which one of the following SMS could be spam',
 		'options':[
 			'XXXMobileMovieClub: To use your credit, click the WAP link in the next txt message or click here>> http://wap. xxxmobilemovieclub.com?n=QJKGIGHJJGCBL',
@@ -133,7 +134,7 @@ var init={
 			'Ffffffffff. Alright no way I can meet up with you sooner?'],
 		'solution': 1
 	},{
-		'category': 4,
+		'category': 3,
 		'question':'Which one of the following SMS could be spam',
 		'options':[
 			'Just forced myself to eat a slice. I\'m really not hungry tho. This sucks. Mark is getting worried. He knows I\'m sick when I turn down pizza. Lol',
@@ -166,9 +167,12 @@ var init={
     'resultReceiver' :'loggingReceiver.com'
 };
 
+var queries = getQueriesFromUrl(window.location.href);
+
 $(function(){
 	$('#quiz-container').jquizzy({
-		variation: 1,
+		workerId: queries.workerId,
+		variation: 3,
         questions: init.questions,
         tasks: init.tasks,
         categoryNames: init.categoryNames,
@@ -176,6 +180,7 @@ $(function(){
         sendResultsURL: init.resultReceiver
     });
 });
+
 </script>
 
 </head>
@@ -184,7 +189,6 @@ $(function(){
 <div class = "banner"><div class="banner_text"><h2>Task Assistant for <a href="https://tasks.crowdflower.com/">CrowdFlower</a></h2></div></div>
 <div class="demo">
 	<div id='quiz-container'>
-		
 	</div>
 </div>
 

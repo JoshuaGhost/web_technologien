@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Task Assistant</title>
+
+<link rel="stylesheet" type="text/css" href="styles/quiz.css" />
+
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/quiz.js"></script>
+<script type="text/javascript" src="scripts/questions.js"></script>
+<script type="text/javascript" src="scripts/testLib.js"></script>
+<script src="scripts/getQueriesFromUrl.js"></script>
+
+<script type="text/javascript">		
+var init={	
+	'categoryNames': [  'Content Creation',
+                        'Interpretation and Analysis',
+                        'Information Finding',
+                        'Varification And Validation'],
+	'questions':[{
+		'category': 0,
+		'question': 'Which four numbers could be recognized from this picture?',
+		'quote': 'http://s9.postimg.org/x3dm7ctkv/0_1552355921167.jpg',
+		'solution': 'rrgq'
+	},{
+		'category': 1,
+		'question': 'How is the attitude of this tweet looks like?',
+		'quote': 'A Big congrats to Kevin McCarthy who was victorious on Saturday in the Presidents Day comp with a fine performance of very steady golf',
+		'solution': 0
+	},{
+		'category': 2,
+		'question': 'Please find his middle name:',
+		'quote': 'Charlie Sheen',
+		'solution': 'Irwin'
+	},{
+		'category': 3,
+		'question':'Which one of the following SMS could be spam',
+		'options':[
+			'Just forced myself to eat a slice. I\'m really not hungry tho. This sucks. Mark is getting worried. He knows I\'m sick when I turn down pizza. Lol',
+			'Lol your always so convincing.',
+			'Did you catch the bus ? Are you frying an egg ? Did you make a tea? Are you eating your mom\'s left over dinner ? Do you feel my Love ?',
+			'Congrats! 1 year special cinema pass for 2 is yours. call 09061209465 now! C Suprman V, Matrix3, StarWars3, etc all 4 FREE! bx420-ip4-5we. 150pm. Dont miss out! ',
+			'I\'m back &amp; we\'re packing the car now, I\'ll let you know if there\'s room'],
+		'solution': 3
+	}],
+    'tasks':[{
+    	'taskTitle': '30 Units - Image Transcription',
+    	'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856919/work?secret=gMN1Cb6aAgpj7mhlsMk0Y97cC4iNIAGXnH8lATkzRjT6',
+    	'category' : 0
+    },
+    {
+    	'taskTitle': '30 Units - Sentiment Analysis',
+    	'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856918/work?secret=7ceQShBcCGGoxczJ2yFlfOjSWIpqXGiRGvxLJXihz%2FvJ',
+    	'category' : 1
+    },
+    {
+    	'taskTitle': '20 Units - Finding Middlenames of Famous People',
+    	'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856912/work?secret=65PdxNESgsI1o%2F5Us0j2teUihD9ESvOMM6O%2FfKITArEF',
+    	'category' : 2
+    },
+    {
+    	'taskTitle': '20 Units - Identify the Spam SMS',
+    	'taskLink' : 'https://tasks.crowdflower.com/channels/cf_internal/jobs/856917/work?secret=eq9TRpbPpX7GGIx7Vaq9ziWaG3golcFILYfJ%2BEg8Sq9H',
+    	'category' : 3
+    }],
+    'resultReceiver' :'loggingReceiver.com'
+};
+
+var queries = getQueriesFromUrl(window.location.href);
+
+$(function(){
+	$('#quiz-container').jquizzy({
+		workerId: queries.workerId,
+		variation: 3,
+        questions: init.questions,
+        tasks: init.tasks,
+        categoryNames: init.categoryNames,
+        tasks: init.tasks,
+        sendResultsURL: init.resultReceiver
+    });
+});
+
+</script>
+
+</head>
+
+<body>
+<div class = "banner"><div class="banner_text"><h2>Task Assistant for <a href="https://tasks.crowdflower.com/">CrowdFlower</a></h2></div></div>
+<div class="demo">
+	<div id='quiz-container'>
+	</div>
+</div>
+
+</body>
+</html>
